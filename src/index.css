@@ -43,17 +43,18 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; /* 垂直居中对齐 */
   align-items: center;
   background: radial-gradient(circle at 50% 50%, rgba(36, 105, 218, 0.6), transparent 70%);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin: 2rem 0;
 }
 
 p {
@@ -70,6 +71,7 @@ p {
   background-color: rgba(0, 0, 0, 0.7); /* 增加钱包背景的对比度 */
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 增加阴影效果 */
+  margin-bottom: 2rem;
 }
 
 .container::before {
