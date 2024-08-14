@@ -38,7 +38,7 @@ body {
   z-index: 1;
   max-width: 1280px;
   width: 100%;
-  padding: 4rem 2rem; /* 增加顶部和底部内边距，确保上下有足够的空间 */
+  padding: 2rem 4rem; /* 增加顶部和底部内边距，确保上下有足够的空间 */
   text-align: center;
   min-height: 100vh; /* 确保背景全屏覆盖 */
   display: flex;
