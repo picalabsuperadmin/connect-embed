@@ -21,6 +21,9 @@ body {
   position: relative;
   z-index: 1;
   text-align: center;
+  width: 100%;
+  max-width: 600px; /* 限制内容最大宽度，避免在大屏幕上过于宽 */
+  padding: 1rem; /* 为小屏幕增加内边距 */
 }
 
 .logo {
@@ -59,6 +62,8 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 100%; /* 使钱包容器在小屏幕上填满宽度 */
+  padding: 1rem; /* 为小屏幕增加内边距 */
 }
 
 .card {
@@ -67,6 +72,8 @@ body {
   border-radius: 8px; /* 添加圆角 */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 添加阴影 */
   transition: transform 300ms, box-shadow 300ms; /* 添加过渡效果 */
+  width: 100%; /* 确保卡片在小屏幕上填满父容器 */
+  max-width: 400px; /* 限制卡片最大宽度，避免在大屏幕上过宽 */
 }
 
 .card:hover {
@@ -76,4 +83,29 @@ body {
 
 .read-the-docs {
   color: #888;
+}
+
+/* 响应式设计调整 */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%; /* 在小屏幕上让容器填满宽度 */
+    padding: 1rem; /* 减少内边距以节省空间 */
+  }
+
+  .logo {
+    height: 4em; /* 缩小 logo 尺寸 */
+    padding: 1rem; /* 减少内边距 */
+  }
+
+  .card {
+    padding: 1.5em; /* 缩小卡片的内边距 */
+  }
+
+  h1 {
+    font-size: 2.5em; /* 缩小标题字体大小 */
+  }
+
+  p {
+    font-size: 1em; /* 缩小段落字体大小 */
+  }
 }
