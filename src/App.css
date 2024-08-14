@@ -1,159 +1,104 @@
-:root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
+/* 全局样式 */
 body {
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: #0a0f2c;
   color: #f6f8ff;
-  overflow: hidden;
-}
-
-.container {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  width: 100%;
-  max-width: 600px;
-  padding: 1rem;
-  padding-top: 4rem; /* 增加顶部内边距，使标题和文本下移 */
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter, transform;
-  transition: filter 300ms, transform 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-  transform: scale(1.05);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .logo.spin {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.wallet-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100%;
-  padding: 1rem;
+  min-height: 100vh;
 }
 
-.card {
-  padding: 2em;
-  background-color: rgba(255, 255, 255, 0.1);
+/* 容器样式 */
+.container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 按钮样式 */
+button {
+  background-color: #1a1a1a;
+  color: #f6f8ff;
+  border: 1px solid transparent;
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 300ms, box-shadow 300ms;
+  padding: 0.75em 1.5em;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
+  margin: 0.5rem auto;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+button:hover {
+  background-color: #242424;
+  border-color: #646cff;
 }
 
-.read-the-docs {
-  color: #888;
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
 }
 
+/* 连接按钮容器 */
+.connected-wallet {
+  margin-top: 12px;
+  text-align: left;
+  border: 1px solid #888;
+  padding: 4px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.connected-wallet pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* 错误信息容器 */
+.error-container {
+  margin-top: 12px;
+  text-align: left;
+  border: 1px solid #f00;
+  padding: 4px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #222;
+  color: #f6f8ff;
+  border-radius: 4px;
+}
+
+/* 响应式设计 */
 @media (max-width: 768px) {
   .container {
+    padding: 1rem;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 0.6em 1.2em;
+  }
+
+  .connected-wallet,
+  .error-container {
     max-width: 100%;
-    padding: 1rem;
-    padding-top: 3rem; /* 在小屏幕上稍微减少顶部内边距 */
-  }
-
-  .logo {
-    height: 4em;
-    padding: 1rem;
-  }
-
-  .card {
-    padding: 1.5em;
-  }
-
-  h1 {
-    font-size: 2.5em;
-  }
-
-  p {
-    font-size: 1em;
   }
 }
 
 @media (max-width: 576px) {
-  .container {
-    padding: 0.8rem;
-    padding-top: 2.5rem; /* 在更小的屏幕上进一步减少顶部内边距 */
-  }
-
-  .logo {
-    height: 3.5em;
-    padding: 0.8rem;
-  }
-
-  .card {
-    padding: 1.2em;
-    max-width: 100%;
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-
-  p {
-    font-size: 0.9em;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 800px;
-    padding: 2.5rem;
-    padding-top: 5rem; /* 在更大屏幕上增加更多顶部内边距 */
-  }
-
-  .logo {
-    height: 7em;
-    padding: 2rem;
-  }
-
-  .card {
-    padding: 2.5em;
-    max-width: 500px;
-  }
-
-  h1 {
-    font-size: 3.5em;
+  button {
+    font-size: 0.85em;
+    padding: 0.5em 1em;
   }
 }
