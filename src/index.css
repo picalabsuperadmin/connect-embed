@@ -43,14 +43,16 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* 使内容从页面顶部开始排列 */
+  justify-content: center;
   align-items: center;
+  background: radial-gradient(circle at 50% 50%, rgba(36, 105, 218, 0.6), transparent 70%);
+  background-size: cover;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  margin-top: 4rem; /* 增加顶部间距，使标题离顶部更远 */
+  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -62,8 +64,12 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-grow: 1; /* 使钱包容器占据更多的可用空间 */
-  margin-bottom: 2rem; /* 增加底部空间，防止被屏幕底部遮挡 */
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7); /* 增加钱包背景的对比度 */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 增加阴影效果 */
 }
 
 .container::before {
@@ -171,7 +177,7 @@ button:focus-visible {
 @media (max-width: 576px) {
   h1 {
     font-size: 1.8em;
-    margin-top: 2rem; /* 在小屏幕上减少标题的顶部间距 */
+    margin-top: 2rem;
   }
 
   .container {
@@ -179,7 +185,7 @@ button:focus-visible {
   }
 
   .wallet-container {
-    margin-bottom: 1rem; /* 在小屏幕上减少钱包容器的底部空间 */
+    max-width: 100%; /* 确保钱包容器在小屏幕上填满宽度 */
   }
 
   button {
@@ -191,15 +197,11 @@ button:focus-visible {
 @media (max-width: 400px) {
   h1 {
     font-size: 1.5em;
-    margin-top: 1.5rem; /* 在极小屏幕上进一步减少标题的顶部间距 */
+    margin-top: 1.5rem;
   }
 
   .container {
     padding: 1rem 0.6rem;
-  }
-
-  .wallet-container {
-    margin-bottom: 0.5rem; /* 在极小屏幕上进一步减少钱包容器的底部空间 */
   }
 
   button {
